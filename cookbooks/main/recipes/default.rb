@@ -92,7 +92,7 @@
 # require_recipe "php"
 
 #enable Extension modules for a given Postgresql database
-# if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
+ if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # Extensions that support both Postgres 9.0, 9.1 and 9.2
   # postgresql9_autoexplain "dbname"
   # postgresql9_btree_gin "dbname"
@@ -113,7 +113,12 @@
   # postgresql9_pg_trgm "dbname"
   # postgresql9_pgcrypto "dbname"
   # postgresql9_pgrowlocks "dbname"
+
+  # PostGis 1.5
   # postgresql9_postgis "dbname" - Only works for 9.0 and 9.1 atm
+
+  # PostGis 2.0.2: only works for 9.2
+   postgresql9_postgis2 "todo"
   # postgresql9_seg "dbname"
   # postgresql9_sslinfo "dbname"
   # postgresql9_tablefunc "dbname"
@@ -132,4 +137,4 @@
   #Admin-Level Contribs
   # postgresql9_pg_buffercache "postgres"
   # postgresql9_pg_freespacemap "postgres"
-#end
+end
